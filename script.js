@@ -7,7 +7,7 @@ fetch('quotes.md')
         // 从 Markdown 文本中提取句子
         const lines = data.split('\n');
         quotes = lines
-            .filter(line => line.trim().startsWith('1.'))  // 只获取以 "1." 开头的行
+            .filter(line => line.trim().match(/^\d+\.\s/)) // 匹配以数字开头的行
             .map(line => line.replace(/^\d+\.\s*/, '').trim()); // 移除序号并修剪空格
     })
     .catch(error => console.error('读取 Markdown 文件失败:', error));
@@ -20,4 +20,5 @@ function getRandomQuote() {
     }
     const randomIndex = Math.floor(Math.random() * quotes.length);
     document.getElementById("quote").innerText = quotes[randomIndex];
+    console.log(quotes);
 }

@@ -45,6 +45,7 @@ button:hover {
 .hamster-center {
     display: flex;
     justify-content: center;
+    margin: 10px;	
 }
 
 .wheel,

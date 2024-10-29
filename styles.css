@@ -42,6 +42,11 @@ button:hover {
   font-size: 14px;
 }
 
+.hamster-center {
+    display: flex;
+    justify-content: center;
+}
+
 .wheel,
 .hamster,
 .hamster div,
